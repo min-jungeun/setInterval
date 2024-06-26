@@ -27,8 +27,12 @@ const bannerdata = [
 
 let num = 0;
 document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) //화면이 열리자마자 바로 떠지는 것, 단 같은 변수를 사용해야함 [num]
+document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
+
 setInterval(function(){
     num++;
     num %= bannerdata.length;
+    document.querySelector(".bannerwrap").style.background = `url(${bannerdata[num]}) center no-repeat`;
     document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) //1초 뒤에 터지는 것
-}, 1000)
+    
+}, 3000)
