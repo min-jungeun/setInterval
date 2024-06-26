@@ -9,7 +9,7 @@
 
 
 //자바스크립트경로는 css와 다름. 자바스크립트가 연결된 html 기준으로 처리해야한다.
-let count = 0;
+let count = 3;
 setInterval(function(){
     count++;
     count %= 5;
