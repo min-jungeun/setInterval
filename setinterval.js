@@ -9,13 +9,26 @@
 
 
 //자바스크립트경로는 css와 다름. 자바스크립트가 연결된 html 기준으로 처리해야한다.
-let count = 3;
-setInterval(function(){
-    count++;
-    count %= 5;
-    document.querySelector("#bannerimg").setAttribute("src",`/banner/${count}.png`)
-}, 1000);
-
-
+// let count = 3;
+// setInterval(function(){
+//     count++;
+//     count %= 5;
+//     document.querySelector("#bannerimg").setAttribute("src",`/banner/${count}.png`)
+// }, 1000);
 
 // $("#bannerimg").attr("src","/banner/1.png") -> 제이쿼리로 표현
+
+
+const bannerdata = [
+    "/banner2/benefit.png",
+    "/banner2/1.png",
+    "/banner2/event.png"
+];
+
+let num = 0;
+document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) //화면이 열리자마자 바로 떠지는 것, 단 같은 변수를 사용해야함 [num]
+setInterval(function(){
+    num++;
+    num %= bannerdata.length;
+    document.querySelector("#bannerimg").setAttribute("src",bannerdata[num]) //1초 뒤에 터지는 것
+}, 1000)
